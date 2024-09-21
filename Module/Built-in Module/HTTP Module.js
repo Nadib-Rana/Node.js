@@ -1,3 +1,4 @@
+// Used to create web servers and handle HTTP requests and responses.
 const http = require('http');
 
 const server = http.createServer((req, res) => {
