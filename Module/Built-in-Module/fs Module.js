@@ -1,13 +1,31 @@
-// File System (fs) Module:
+// File System (fs) Module
+const { error } = require('console');
+const fs = require('fs');
 
-const http = require('http');
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello nadib Are you Okay!\n');
+fs.writeFile('Fs.txt','This twxt is come from Fs.txt file', (err) => {
+  if(err){
+    console.log(err);
+  }
+  else{
+    console.log("write successfull in fs.text");
+  }
 });
 
-server.listen(3000, () => {
-  console.log('Server running at http://localhost:3000/');
+fs.readFile('Fs.txt','utf-8', (err , data) => {
+  if(err){
+    console.log(err);
+  }
+  else{
+    console.log("Read successfull:", data);
+  }
+});
+
+
+fs.readFile('texOfFs.txt','utf-8', (err , data) => {
+  if(err){
+    console.log(err);
+  }
+  else{
+    console.log("Read 1st file is successfull.The file name is the txtOfFs.js:", data);
+  }
 });
